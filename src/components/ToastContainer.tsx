@@ -16,10 +16,7 @@ function ToastContainer({
   );
 
   return createPortal(
-    <div
-      data-theme={theme}
-      className={`toastora-toasts toastora-toasts--${position}`}
-    >
+    <div className={`toastora-toasts toastora-toasts--${position}`}>
       {toasts.length !== 0 &&
         toasts.map((toastData) => {
           const ToastComponent = toastData.customComponent ?? Toast;
@@ -38,6 +35,7 @@ function ToastContainer({
                 state={toastData.state}
                 duration={toastData?.duration}
                 containerId={containerId}
+                theme={theme}
                 dismissToast={() => {
                   store.updateState(toastData.id, "exiting");
                 }}

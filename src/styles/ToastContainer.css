@@ -6,27 +6,6 @@
 }
 
 .toastora-toasts {
-  /*default theme*/
-  --toast-default-bg: #ffffff;
-  --toast-default-text-primary: #18181b;
-  --toast-default-text-secondary: #71717a;
-
-  --toast-success-bg: #f0fdf4;
-  --toast-success-text-primary: #166534;
-  --toast-success-text-secondary: #15803d;
-
-  --toast-error-bg: #fef2f2;
-  --toast-error-text-primary: #991b1b;
-  --toast-error-text-secondary: #b91c1c;
-
-  --toast-info-bg: #eff6ff;
-  --toast-info-text-primary: #1e40af;
-  --toast-info-text-secondary: #1d4ed8;
-
-  --toast-warning-bg: #fffbeb;
-  --toast-warning-text-primary: #92400e;
-  --toast-warning-text-secondary: #b45309;
-
   position: fixed;
   display: flex;
   flex-direction: column;
@@ -40,42 +19,23 @@
   right: 10px;
   --slide-x: 100%;
 }
+
 .toastora-toasts--top-left {
   top: 10px;
   left: 10px;
   --slide-x: -100%;
 }
+
 .toastora-toasts--bottom-right {
   bottom: 10px;
   right: 10px;
   --slide-x: 100%;
 }
+
 .toastora-toasts--bottom-left {
   bottom: 10px;
   left: 10px;
   --slide-x: -100%;
-}
-
-.toastora-toasts[data-theme="dark"] {
-  --toast-default-bg: #18181b;
-  --toast-default-text-primary: #fafafa;
-  --toast-default-text-secondary: #a1a1aa;
-
-  --toast-success-bg: #18181b;
-  --toast-success-text-primary: #4ae683;
-  --toast-success-text-secondary: #a1a1aa;
-
-  --toast-error-bg: #18181b;
-  --toast-error-text-primary: #f36161;
-  --toast-error-text-secondary: #a1a1aa;
-
-  --toast-info-bg: #18181b;
-  --toast-info-text-primary: #549bed;
-  --toast-info-text-secondary: #a1a1aa;
-
-  --toast-warning-bg: #18181b;
-  --toast-warning-text-primary: #e8bf38;
-  --toast-warning-text-secondary: #a1a1aa;
 }
 
 @media (max-width: 600px) {
@@ -84,20 +44,24 @@
     padding-left: 5px;
     padding-right: 5px;
   }
+
   .toastora-toasts--top-right {
     top: 10px;
-    right: 0px;
+    right: 0;
   }
+
   .toastora-toasts--top-left {
     top: 10px;
-    left: 0px;
+    left: 0;
   }
+
   .toastora-toasts--bottom-right {
     bottom: 10px;
-    right: 0px;
+    right: 0;
   }
+
   .toastora-toasts--bottom-left {
     bottom: 10px;
-    left: 0px;
+    left: 0;
   }
 }

@@ -2,6 +2,7 @@ import { ComponentType } from "react";
 
 export type ToastTypes = "default" | "success" | "error" | "info" | "warning";
 export type ToastStates = "exiting" | "visible";
+export type ThemeTypes = "dark" | "light";
 
 export type Toast = {
   id: number;
@@ -22,6 +23,7 @@ export type ToastProps = {
   desc?: string;
   duration?: number;
   containerId: string;
+  theme: ThemeTypes;
   dismissToast: () => void;
 };
 export type CustomToastProps = {
@@ -32,6 +34,7 @@ export type CustomToastProps = {
   desc?: string;
   duration?: number;
   containerId?: string;
+  theme: ThemeTypes;
   dismissToast?: () => void;
 };
 
@@ -52,7 +55,7 @@ export type ToastPosition =
 export type ToastContainerProps = {
   position?: ToastPosition;
   containerId?: string;
-  theme?: "dark" | "light";
+  theme?: ThemeTypes;
 };
 
 export type TransitionProps = {
