@@ -21,7 +21,7 @@ import { ToastContainer, toast } from "react-toastora";
 
 function App() {
   const notify = () => {
-    toast.success("Profile updated successfully!");
+    toast.success("Changes saved!");
   };
 
   return (
@@ -39,46 +39,33 @@ That's it! You can now trigger toast notifications from anywhere in your React a
 
 react-toastora supports different types of notifications for different use cases.
 
-### Default
-
-```tsx
-toast.default("You have a new notification!");
-```
-
-### Success
-
-```tsx
-toast.success("Your changes have been saved!");
-```
-
-### Error
-
-```tsx
-toast.error("Something went wrong!");
-```
-
-### Info
-
-```tsx
-toast.info("Your session will expire soon.");
-```
-
-### Warning
-
-```tsx
-toast.warning("Your storage is full.");
-```
+| Type      | Example                                          |
+| --------- | ------------------------------------------------ |
+| `default` | `toast.default("You have a new notification!")`  |
+| `success` | `toast.success("Your changes have been saved!")` |
+| `error`   | `toast.error("Something went wrong!")`           |
+| `info`    | `toast.info("Your session will expire soon.")`   |
+| `warning` | `toast.warning("Your storage is full.")`         |
 
 ## Options
 
 react-toastora provides additional options to customize your notifications.
 
-| Option            | Type                  | Description                                                                                                     |
-| ----------------- | --------------------- | --------------------------------------------------------------------------------------------------------------- |
-| `desc`            | `string`              | Optional description displayed below the toast title.                                                           |
-| `duration`        | `number`              | Duration in milliseconds before the toast is automatically dismissed.                                           |
-| `customComponent` | `React.ComponentType` | Custom React component used to render the toast.                                                                |
-| `containerId`     | `string`              | Identifies the `ToastContainer` where the toast should be rendered. Only needed when using multiple containers. |
+| Option            | Type                              | Description                                                                                                     |
+| ----------------- | --------------------------------- | --------------------------------------------------------------------------------------------------------------- |
+| `desc`            | `string`                          | Optional description displayed below the toast title.                                                           |
+| `duration`        | `number`                          | Duration in milliseconds before the toast is automatically dismissed.                                           |
+| `customComponent` | `ComponentType<CustomToastProps>` | Custom React component used to render the toast.                                                                |
+| `containerId`     | `string`                          | Identifies the `ToastContainer` where the toast should be rendered. Only needed when using multiple containers. |
+
+### Example
+
+```tsx
+toast.success("Changes saved!", {
+  desc: "Your profile has been updated successfully.",
+  duration: 5000,
+});
+```
 
 ## Customization
 
