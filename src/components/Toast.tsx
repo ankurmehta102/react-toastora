@@ -15,9 +15,20 @@ const icons = {
   warning: <WarningIcon />,
 };
 
-function Toast({ title, type, desc, duration, dismissToast }: ToastProps) {
+function Toast({
+  title,
+  type,
+  desc,
+  duration,
+  theme,
+  dismissToast,
+}: ToastProps) {
   return (
-    <div className={`toastora-toast toastora-toast--${type}`}>
+    <div
+      className={`toastora-toast toastora-toast--${type} ${
+        theme === "dark" ? `toastora-toast--${type}-dark` : ""
+      }`}
+    >
       <div className="toastora-toast__icon-wrapper">{icons[type]}</div>
       <div className="toastora-toast__content-wrapper">
         <span className="toastora-toast__title">{title}</span>
