@@ -1,5 +1,6 @@
-import { TransitionProps } from "../toasts/types";
+import type { TransitionProps } from "../toasts/types";
 import "../styles/Transition.css";
+import { memo } from "react";
 
 function Transition({
   duration,
@@ -21,4 +22,4 @@ function Transition({
   );
 }
 
-export default Transition;
+export default memo(Transition);

@@ -6,13 +6,14 @@ import SuccessIcon from "../icons/SuccessIcon";
 import WarningIcon from "../icons/WarningIcon";
 import "../styles/Toast.css";
 import type { ToastProps } from "../toasts/types";
+import { memo } from "react";
 
 const icons = {
-  default: <DefaultIcon />,
-  success: <SuccessIcon />,
-  error: <ErrorIcon />,
-  info: <InfoIcon />,
-  warning: <WarningIcon />,
+  default: DefaultIcon,
+  success: SuccessIcon,
+  error: ErrorIcon,
+  info: InfoIcon,
+  warning: WarningIcon,
 };
 
 function Toast({
@@ -23,13 +24,16 @@ function Toast({
   theme,
   dismissToast,
 }: ToastProps) {
+  const Icon = icons[type];
   return (
     <div
       className={`toastora-toast toastora-toast--${type} ${
         theme === "dark" ? `toastora-toast--${type}-dark` : ""
       }`}
     >
-      <div className="toastora-toast__icon-wrapper">{icons[type]}</div>
+      <div className="toastora-toast__icon-wrapper">
+        <Icon />
+      </div>
       <div className="toastora-toast__content-wrapper">
         <span className="toastora-toast__title">{title}</span>
         {desc && <span className="toastora-toast__desc">{desc}</span>}
@@ -49,4 +53,4 @@ function Toast({
   );
 }
 
-export default Toast;
+export default memo(Toast);

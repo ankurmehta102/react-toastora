@@ -1,4 +1,4 @@
-import { ComponentType } from "react";
+import type { ComponentType } from "react";
 
 export type ToastTypes = "default" | "success" | "error" | "info" | "warning";
 export type ToastStates = "exiting" | "visible";
@@ -63,4 +63,10 @@ export type TransitionProps = {
   children: React.ReactNode;
   isExiting: boolean;
   onTransitionEnd: () => void;
+};
+
+export type ToastItemProps = {
+  toast: Toast;
+  containerId: string;
+  theme: ThemeTypes;
 };

@@ -1,3 +1,4 @@
+import { memo } from "react";
 function ErrorIcon() {
   return (
     <svg
@@ -12,4 +13,4 @@ function ErrorIcon() {
   );
 }
 
-export default ErrorIcon;
+export default memo(ErrorIcon);

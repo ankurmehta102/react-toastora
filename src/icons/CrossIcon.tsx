@@ -1,3 +1,5 @@
+import { memo } from "react";
+
 function CrossIcon() {
   return (
     <svg
@@ -13,4 +15,4 @@ function CrossIcon() {
   );
 }
 
-export default CrossIcon;
+export default memo(CrossIcon);

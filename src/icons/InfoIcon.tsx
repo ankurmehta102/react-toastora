@@ -1,3 +1,4 @@
+import { memo } from "react";
 function InfoIcon() {
   return (
     <svg
@@ -17,4 +18,4 @@ function InfoIcon() {
   );
 }
 
-export default InfoIcon;
+export default memo(InfoIcon);

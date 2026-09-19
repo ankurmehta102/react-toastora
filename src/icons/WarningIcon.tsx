@@ -1,3 +1,4 @@
+import { memo } from "react";
 function WarningIcon() {
   return (
     <svg
@@ -31,4 +32,4 @@ function WarningIcon() {
   );
 }
 
-export default WarningIcon;
+export default memo(WarningIcon);
