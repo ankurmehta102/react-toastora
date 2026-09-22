@@ -6,6 +6,7 @@
 }
 
 .toastora-toasts {
+  z-index: 9999;
   position: fixed;
   display: flex;
   flex-direction: column;
