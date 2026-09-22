@@ -89,6 +89,7 @@ Customize the look and feel of the default toast by overriding the provided CSS 
   --toastora-desc-line-height: 16px;
   --toastora-border-radius: 10px;
   --toastora-border-width: 2px;
+  --toastora-progress-bar-height: 5px;
 
   /* Success toast — light theme */
   --toastora-success-bg: #ffffff;

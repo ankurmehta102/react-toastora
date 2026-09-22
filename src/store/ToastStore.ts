@@ -1,4 +1,4 @@
-import { ToastStates, type Toast } from "../toasts/types";
+import type { ToastStates, Toast } from "../toasts/types";
 
 class ToastStore {
   private toasts: Toast[] = [];

@@ -1,3 +1,5 @@
+import { memo } from "react";
+
 function DefaultIcon() {
   return (
     <svg
@@ -30,4 +32,4 @@ function DefaultIcon() {
   );
 }
 
-export default DefaultIcon;
+export default memo(DefaultIcon);

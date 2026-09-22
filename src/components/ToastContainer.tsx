@@ -1,9 +1,8 @@
-import Toast from "./Toast";
 import "../styles/ToastContainer.css";
 import { useSyncExternalStore } from "react";
-import { ToastContainerProps } from "../toasts/types";
-import Transition from "./Transition";
+import type { ToastContainerProps } from "../toasts/types";
 import store from "../store/ToastStore";
+import ToastItem from "./ToastItem";
 import { createPortal } from "react-dom";
 
 function ToastContainer({
@@ -18,29 +17,14 @@ function ToastContainer({
   return createPortal(
     <div className={`toastora-toasts toastora-toasts--${position}`}>
       {toasts.length !== 0 &&
-        toasts.map((toastData) => {
-          const ToastComponent = toastData.customComponent ?? Toast;
+        toasts.map((toast) => {
           return (
-            <Transition
-              duration={300}
-              isExiting={toastData.state === "exiting"}
-              onTransitionEnd={() => store.remove(toastData.id)}
-              key={toastData.id}
-            >
-              <ToastComponent
-                id={toastData.id}
-                type={toastData.type}
-                title={toastData.title}
-                desc={toastData?.desc}
-                state={toastData.state}
-                duration={toastData?.duration}
-                containerId={containerId}
-                theme={theme}
-                dismissToast={() => {
-                  store.updateState(toastData.id, "exiting");
-                }}
-              />
-            </Transition>
+            <ToastItem
+              key={toast.id}
+              toast={toast}
+              containerId={containerId}
+              theme={theme}
+            />
           );
         })}
     </div>,

@@ -1,3 +1,4 @@
+import { memo } from "react";
 function SuccessIcon() {
   return (
     <svg
@@ -14,4 +15,4 @@ function SuccessIcon() {
   );
 }
 
-export default SuccessIcon;
+export default memo(SuccessIcon);
